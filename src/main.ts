@@ -32,6 +32,8 @@ import I18n from "@/languages/index";
 import pinia from "@/stores";
 // errorHandler
 import errorHandler from "@/utils/errorHandler";
+import VFormRender from "vform3-builds/dist/render.umd.js"; //引入VFormRender组件
+import "vform3-builds/dist/render.style.css"; //引入VFormRender样式
 
 const app = createApp(App);
 
@@ -42,4 +44,4 @@ Object.keys(Icons).forEach(key => {
   app.component(key, Icons[key as keyof typeof Icons]);
 });
 
-app.use(ElementPlus).use(directives).use(router).use(I18n).use(pinia).mount("#app");
+app.use(ElementPlus).use(VFormRender).use(directives).use(router).use(I18n).use(pinia).mount("#app");
